@@ -1,7 +1,6 @@
 package io.example;
 
 import java.util.concurrent.SubmissionPublisher;
-import java.util.function.Function;
 
 public class Sample {
 
@@ -9,21 +8,22 @@ public class Sample {
 
 		SubmissionPublisher<Integer> feed = new SubmissionPublisher<Integer>();
 
-		MyTransformer transformer = new  MyTransformer(
-		
-		
-		//feed.subscribe(new MySubscriber());
+		// MyTransformer transformer = new MyTransformer(data -> data * 2);
+		// feed.subscribe(transformer);
+		// transformer.subscribe(new MySubscriber());
 
-		for (int i = 0; i <= 10; i++) {		
-				
+		feed.subscribe(new MySubscriber());
+
+		for (int i = 0; i <= 10; i++) {
+
 			feed.submit(i);
-			System.out.println("Emitting:"+i);
+			System.out.println("Emitting:" + i);
 		}
-		
-		//feed.close();
+
+		// feed.close();
 
 		Thread.sleep(5000);
-	
+
 	}
 
 }
