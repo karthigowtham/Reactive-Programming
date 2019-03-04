@@ -21,12 +21,12 @@ public class MySubscriber implements Subscriber<Integer> {
 		/*
 		 * if (value == 8) { subscription.cancel(); }
 		 */
-		// subscription.request(1);
+		//subscription.request(1);
 	}
 
 	public void onSubscribe(Subscription subscription) {
 		this.subscription = subscription;
-		// subscription.request(5);
+		subscription.request(5);
 
 	}
 

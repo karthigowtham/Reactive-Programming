@@ -1,5 +1,7 @@
 package io.example.reactive;
 
+import java.util.concurrent.TimeUnit;
+
 import io.reactivex.Flowable;
 
 public class FlowableExample {
@@ -11,10 +13,9 @@ public class FlowableExample {
 
 		feed.map(i -> i * 2).subscribe(System.out::println);
 
-		// Flowable.interval(1, 1, TimeUnit.SECONDS).map(i -> i *
-		// 2).forEach(System.out::println);
+		//Flowable.interval(1, 1, TimeUnit.SECONDS).map(i -> i *2).forEach(System.out::println);
 
-		// Thread.sleep(10000);
+		//Thread.sleep(10000);
 
 		System.out.println("Program Completes");
 
