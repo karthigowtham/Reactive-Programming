@@ -20,10 +20,10 @@ public class VehicleDetector {
 		System.out.println("TRAFFIC STARTED");
 		int count = 0;
 
-		while (count < 15) {
+		while (count < 10) {
 
-			if (count % 5 == 0) {
-				Thread.sleep(3000);
+			if (count > 0 && count % 5 == 0) {
+				Thread.sleep(2000);
 			}
 			/*
 			 * if (count == 14) { source.onError(new RuntimeException()); }

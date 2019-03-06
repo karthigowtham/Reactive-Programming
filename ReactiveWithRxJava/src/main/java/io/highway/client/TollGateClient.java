@@ -6,14 +6,16 @@ import io.reactivex.Flowable;
 
 public class TollGateClient {
 
-	public static Flowable<Vehicle> feed = VehicleDetector.getVehicleFeed();
+	public static Flowable<Vehicle> feed = VehicleDetector.getVehicleFeed().share();
+	
 
 	public static void main(String[] args) throws InterruptedException {
 
-		// getAllVehicles();
+				
+		getAllVehicles();
 		getOverSpeedVehicles(120);
 
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 
 	}
 
@@ -28,7 +30,7 @@ public class TollGateClient {
 
 		feed.filter(vehicle -> vehicle.getSpeed() > speedLimit).subscribe(
 				data -> processVehicle("OVER SPEED VEHICLE -> " + data.toString()),
-				err -> System.out.println("DEVICE DOWN....!!!!"), () -> System.out.println("TRAFFIC CLOSED"));
+				err -> System.out.println("DEVICE DOWN....!!!!"), () -> System.out.println("TRAFFIC CLOSED - SPEED"));
 
 	}
 

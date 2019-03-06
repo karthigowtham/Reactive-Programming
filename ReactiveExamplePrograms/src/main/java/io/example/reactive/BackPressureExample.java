@@ -28,9 +28,9 @@ public class BackPressureExample {
 		int count = 0;
 
 		while (count < 10) {
-			/*
-			 * if (count == 5) { emitter.onError(new RuntimeException()); }
-			 */
+			
+			// if (count == 5) { emitter.onError(new RuntimeException()); }
+			 
 			System.out.println("Emitting:" + count);
 			emitter.onNext(count);
 			count++;

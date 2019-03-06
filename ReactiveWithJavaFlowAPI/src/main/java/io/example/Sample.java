@@ -18,6 +18,7 @@ public class Sample {
 
 			feed.submit(i);
 			System.out.println("Emitting:" + i);
+			Thread.sleep(500);
 		}
 
 		// feed.close();
