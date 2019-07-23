@@ -10,16 +10,14 @@ public class AsyncClientExample {
 
 		feed.subscribe(data -> printIt("SUB:" + data));
 
-		/*
-		 * ExecutorService executors = Executors.newFixedThreadPool(50);
-		 * feed.subscribeOn(Schedulers.from(executors)).forEach(data ->
-		 * printIt("Client 1:" + data));
-		 */
+		// ExecutorService executors = Executors.newFixedThreadPool(50);
+		// feed.subscribeOn(Schedulers.from(executors)).forEach(data -> printIt("Client
+		// 1:" + data));
 
 		Thread.sleep(5000);
 	}
 
-	private static void printIt(String value) {
+	private static void printIt(String value) throws InterruptedException {
 		System.out.println(Thread.currentThread().getName());
 		System.out.println(value);
 	}

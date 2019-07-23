@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 import io.reactivex.Flowable;
 
 public class ForkingExample {
-	// Hot vs Cold publisher
+	// Cold vs Hot (share) publisher
 	public static void main(String[] args) throws InterruptedException {
 
 		Flowable<Long> feed = Flowable.interval(1, 1, TimeUnit.SECONDS);
